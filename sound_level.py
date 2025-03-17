@@ -1,6 +1,6 @@
 """Sound level calculations according to IEC 61672-1 (2002)
 
-Based on the publicly available reprint IS 15575 (Part 1 ) : 2005
+Based on the publicly available reprint IS 15575 (Part 1): 2005
 https://law.resource.org/pub/in/bis/S04/is.15575.1.2005.pdf
 
 References to sections, figures, etc in the function docs refer to the IS 15575 document.

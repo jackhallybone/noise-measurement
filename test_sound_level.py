@@ -1,6 +1,6 @@
 """Sound level calculation validation according to IEC 61672-1 (2002)
 
-Based on the publicly available reprint IS 15575 (Part 1 ) : 2005
+Based on the publicly available reprint IS 15575 (Part 1): 2005
 https://law.resource.org/pub/in/bis/S04/is.15575.1.2005.pdf
 
 References to sections, figures, etc in the function docs refer to the IS 15575 document.
@@ -143,8 +143,8 @@ def test_frequency_weighting_and_tolerance(weighting, color):
     """
 
     weighting_and_tolerance_limits = np.array(
-        [  # Table 2
-            #     Hz      A-      C-    Z-   Class 1 limits    Class 2 limits
+        [
+            # Data from Table 2: Frequency Hz, A-weight, C-weight, Z-weight, C1 lower, C1 upper, C2 lower, C2 upper
             [10, -70.4, -14.3, 0.0, +3.5, -np.inf, +5.5, -np.inf],
             [12.5, -63.4, -11.2, 0.0, +3.0, -np.inf, +5.5, -np.inf],
             [16, -56.7, -8.5, 0.0, +2.5, -4.5, +5.5, -np.inf],
