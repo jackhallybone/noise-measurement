@@ -66,7 +66,7 @@ def time_weight(fs, weighting, in_data):
     return out_data
 
 
-def time_weighting_pole_frequencies():
+def frequency_weighting_pole_frequencies():
     """Calculate the pole frequencies from their definitions.
 
     Sections 5.4.6 to 5.4.11 give the pole frequencies and their definitions.
@@ -120,9 +120,9 @@ def define_frequency_weighting_filter(fs, weighting):
         sos (ndarray): Array of second-order filter coefficients.
     """
 
-    f1, f2, f3, f4 = time_weighting_pole_frequencies()
+    f1, f2, f3, f4 = frequency_weighting_pole_frequencies()
 
-    # https://github.com/endolith/waveform-analysis/blob/master/waveform_analysis/weighting_filters/ABC_weighting.py#L29
+    # https://github.com/endolith/waveform-analysis/blob/master/waveform_analysis/weighting_filters/ABC_weighting.py#L28
 
     # Z-weighting (no filter) default starting case
     z = []
@@ -139,7 +139,7 @@ def define_frequency_weighting_filter(fs, weighting):
         z.extend([0, 0])
         p.extend([-2 * np.pi * f2, -2 * np.pi * f3])
 
-    # Normalise the filter to 0dB at 1kHz (fr)
+    # Normalise the filter to 0dB at 1kHz
     b, a = signal.zpk2tf(z, p, k)
     k /= abs(signal.freqs(b, a, [2 * np.pi * 1000])[1][0])
 
